@@ -22,6 +22,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/aryanstha/CliPost/config"
+	"github.com/aryanstha/CliPost/formatter"
 	"golang.org/x/net/proxy"
 
 	"github.com/alessio/shellescape"
@@ -334,7 +336,7 @@ type App struct {
 	historyIndex int
 	currentPopup string
 	history      []*Request
-	conf         *config.Config
+	config       *config.Config
 	statusLine   *StatusLine
 }
 
