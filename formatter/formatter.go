@@ -18,9 +18,7 @@ type ResponseFormatter interface {
 func New(appConfig *config.Config, contentType string) ResponseFormatter {
 	ctype, _, err := mime.ParseMediaType(contentType)
 	if err == nil && appConfig.General.FormatJSON && (ctype == config.ContentTypes["json"] || strings.HasSuffix(ctype, "+json")) {
-		return &jsonFormatter{}
-	} else if strings.Contains(contentType, "text/html") {
-		return &htmlFormatter{}
+		return &jsonFormatter{} ////else if strings.Contains(contentType, "text/html") {return &htmlFormatter{} }
 	} else if strings.Index(contentType, "text") == -1 && strings.Index(contentType, "application") == -1 {
 		return &binaryFormatter{}
 	} else {
