@@ -16,7 +16,6 @@ import (
 	"os"
 	"path"
 	"regexp"
-	"runtime"
 	"sort"
 	"strconv"
 	"strings"
@@ -1851,7 +1850,7 @@ func main() {
 	}
 	var g *gocui.Gui
 	var err error
-	for _, outputMode := range []gocui.OutputMode{gocui.Output256, gocui.OutputNormal, gocui.OutputMode(termbox.OutputGrayscale)} {
+	for _, outputMode := range []gocui.OutputMode{gocui.Output256, gocui.OutputNormal} {
 		g, err = gocui.NewGui(outputMode)
 		if err == nil {
 			break
@@ -1861,9 +1860,7 @@ func main() {
 		log.Panicln(err)
 	}
 
-	if runtime.GOOS == WINDOWS_OS && runewidth.IsEastAsian() {
-		g.ASCII = true
-	}
+	//if runtime.GOOS == WINDOWS_OS && runewidth.IsEastAsian() { g.ASCII = true }
 
 	app := &App{history: make([]*Request, 0, 31)}
 
