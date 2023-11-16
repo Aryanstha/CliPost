@@ -22,8 +22,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aryanstha/CliPost/config"
-	"github.com/aryanstha/CliPost/formatter"
+	"CliPost/config"
+	"CliPost/formatter"
 	"golang.org/x/net/proxy"
 
 	"github.com/alessio/shellescape"

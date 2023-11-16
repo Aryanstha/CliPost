@@ -1,11 +1,11 @@
 package formatter
 
 import (
-	"bytes"                           //
-	"errors"                          //
-	"github..com/x86kernel/htmlcolor" // Html syntax highlighter
-	"github.com/PuerkitoBio/goquery"  // Html parser
-	"io"                              //
+	"bytes"                          //
+	"errors"                         //
+	"github.com/PuerkitoBio/goquery" // Html parser
+	"github.com/x86kernel/htmlcolor" // Html syntax highlighter
+	"io"                             //
 )
 
 // HtmlFormatter is a formatter for html markup language

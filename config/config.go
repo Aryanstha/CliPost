@@ -2,12 +2,12 @@ package config
 
 import (
 	"errors"
+	"github.com/BurntSushi/toml"
+	"github.com/mitchellh/go-homedir"
 	"os"
 	"path/filepath"
 	"runtime"
 	"time"
-
-	"github.com/BurntSushi/toml"
 )
 
 var ContentTypes = map[string]string{
